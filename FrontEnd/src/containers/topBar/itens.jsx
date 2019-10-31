@@ -1,23 +1,24 @@
 import React from "react";
-import { NavItem, Nav, NavDropdown, MenuItem } from "react-bootstrap";
+import { NavItem, Nav } from "react-bootstrap";
+//   NavDropdown, MenuItem
 
 export default function Itens(props) {
-  const notification = (
-    <div>
-      <i className="fa fa-globe" />
-      <b className="caret" />
-      <span className="notification">5</span>
-      <p className="hidden-lg hidden-md">Notification</p>
-    </div>
-  );
+  // const notification = (
+  //   <div>
+  //     <i className="fa fa-globe" />
+  //     <b className="caret" />
+  //     <span className="notification">5</span>
+  //     <p className="hidden-lg hidden-md">Notification</p>
+  //   </div>
+  // );
   return (
     <div>
-      <Nav>
-        <NavItem eventKey={1} href="#">
-          {/* <i className="fa fa-dashboard" /> */}
+      {/* <Nav>
+         <NavItem eventKey={1} href="#">
+          <i className="fa fa-dashboard" /> 
           <p className="hidden-lg hidden-md">Dashboard</p>
-        </NavItem>
-        {/* <NavDropdown
+        </NavItem> 
+         <NavDropdown
           eventKey={2}
           title={notification}
           noCaret
@@ -32,13 +33,13 @@ export default function Itens(props) {
         <NavItem eventKey={3} href="#">
           <i className="fa fa-search" />
           <p className="hidden-lg hidden-md">Search</p>
-        </NavItem> */}
-      </Nav>
+        </NavItem> 
+      </Nav> */}
       <Nav pullRight>
-        <NavItem eventKey={1} href="#">
+        {/*<NavItem eventKey={1} href="#">
           Account
         </NavItem>
-        {/* <NavDropdown
+         <NavDropdown
           eventKey={2}
           title="Dropdown"
           id="basic-nav-dropdown-right"

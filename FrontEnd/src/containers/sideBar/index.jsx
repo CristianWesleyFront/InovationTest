@@ -26,13 +26,13 @@ export default function SideBar(props) {
       {hasImage ? (
         <div className="sidebar-background" style={sidebarBackground} />
       ) : null}
-      <div className="logo">
-        <a className="simple-text logo-mini">
+      <div className="logo" style={{ textAlign: "center" }}>
+        {/* <a className="simple-text logo-mini">
           <div className="logo-img">
             <img src={logo} alt="logo_image" />
           </div>
-        </a>
-        <a className="simple-text logo-normal">Cristian Gato</a>
+        </a> */}
+        <a className="simple-text logo-normal">Teste Inovação</a>
       </div>
       <div className="sidebar-wrapper">
         <ul className="nav">

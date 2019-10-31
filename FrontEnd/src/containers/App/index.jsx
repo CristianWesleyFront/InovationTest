@@ -14,12 +14,12 @@ import image from "assets/img/sidebar-3.jpg";
 
 export default function App(props) {
   const [_notificationSystem, set_notificationSystem] = useState(null);
-  const [images, setImages] = useState(image);
+  //const [images, setImages] = useState(image);
   const [color, setColor] = useState("black");
   const [hasImage, setHasImage] = useState(true);
-  const [fixedClasses, setFixedClasses] = useState(
-    "dropdown show-dropdown open"
-  );
+  // const [fixedClasses, setFixedClasses] = useState(
+  //   "dropdown show-dropdown open"
+  // );
   const { location } = props;
   const notificationSystem = useRef(null);
   const mainPanel = useRef(null);
