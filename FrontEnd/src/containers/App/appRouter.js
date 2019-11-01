@@ -13,21 +13,21 @@ const dashboardRoutes = [
   },
   {
     path: "/departament",
-    name: "Departament",
+    name: "Departamento",
     icon: "pe-7s-user",
     component: Departament,
     layout: "/admin"
   },
   {
     path: "/employees",
-    name: "Employees",
+    name: "Empregados",
     icon: "pe-7s-note2",
     component: Employees,
     layout: "/admin"
   },
   {
     path: "/financialMoviments",
-    name: "FinancialMoviments",
+    name: "Movimentações",
     icon: "pe-7s-news-paper",
     component: FinancialMoviments,
     layout: "/admin"

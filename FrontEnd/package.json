@@ -8,6 +8,8 @@
     "node-sass": "4.12.0",
     "react": "^16.10.2",
     "react-bootstrap": "0.32.4",
+    "react-bootstrap-table-next": "^3.2.1",
+    "react-bootstrap-table2-toolkit": "^2.1.0",
     "react-chartist": "0.13.3",
     "react-dom": "^16.10.2",
     "react-google-maps": "9.4.5",
@@ -21,7 +23,8 @@
     "reactotron-redux": "^3.1.2",
     "reactotron-redux-saga": "^4.2.2",
     "redux": "^4.0.4",
-    "redux-saga": "^1.1.1"
+    "redux-saga": "^1.1.1",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@types/googlemaps": "3.30.19",
