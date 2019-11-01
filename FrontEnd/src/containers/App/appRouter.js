@@ -20,7 +20,7 @@ const dashboardRoutes = [
   },
   {
     path: "/employees",
-    name: "Empregados",
+    name: "Funcionários",
     icon: "pe-7s-note2",
     component: Employees,
     layout: "/admin"

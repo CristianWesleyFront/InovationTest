@@ -30,23 +30,8 @@ function Departament(props) {
     submitDepartamentRequest(createValue);
     setShowModal(false);
   };
-  const columns = [
-    {
-      dataField: "id",
-      text: "ID",
-      headerStyle: () => {
-        return { width: "10%" };
-      }
-    },
-    {
-      dataField: "departamento",
-      text: "Departamento",
-      headerStyle: () => {
-        return { width: "90%" };
-      }
-    }
-  ];
 
+  let isDisabled = createValue === "" ? true : false;
   return (
     <div className="content">
       <Grid>
@@ -61,12 +46,14 @@ function Departament(props) {
               content={
                 <div>
                   <Form
+                    title={"Cadastro: Novo Departamento"}
                     show={showModal}
                     handleClose={handleClose}
                     handleSubmit={handleSubmit}
                     onChangeSubmit={onChangeSubmit}
+                    isDisabled={isDisabled}
                   />
-                  <Table columns={columns} products={data} />
+                  <Table products={data} />
                 </div>
               }
             />

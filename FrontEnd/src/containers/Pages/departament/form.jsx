@@ -5,10 +5,11 @@ import Modal from "components/Modal";
 import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 
 export default function FormDepartament(props) {
-  const { handleSubmit, onChangeSubmit } = props;
+  const { handleSubmit, onChangeSubmit, isDisabled } = props;
   return (
     <Modal
       {...props}
+      isDisabled={isDisabled}
       component={
         <Grid fluid>
           <Row>
@@ -17,10 +18,10 @@ export default function FormDepartament(props) {
                 ncols={["col-md-10"]}
                 properties={[
                   {
-                    label: "Nome do novo departamento",
+                    label: "",
                     type: "text",
                     bsClass: "form-control",
-                    placeholder: "novo departamento",
+                    placeholder: "nome do departamento",
                     defaultValue: "",
                     maxLength: 100,
                     onChange: onChangeSubmit

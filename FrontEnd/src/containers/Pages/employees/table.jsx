@@ -11,6 +11,13 @@ export default function TableSearch(props) {
       }
     },
     {
+      dataField: "funcionario",
+      text: "Funcionário",
+      headerStyle: () => {
+        return { width: "90%" };
+      }
+    },
+    {
       dataField: "departamento",
       text: "Departamento",
       headerStyle: () => {
