@@ -8,7 +8,8 @@ export default function Form(props) {
     handleSubmit,
     component,
     title,
-    isDisabled
+    isDisabled,
+    submited
   } = props;
   return (
     <Modal show={show} onHide={handleClose} size="lg">
@@ -20,14 +21,16 @@ export default function Form(props) {
         <Button variant="secondary" onClick={handleClose}>
           Fechar
         </Button>
-        <Button
-          variant="primary"
-          type={"submit"}
-          onClick={handleSubmit}
-          disabled={isDisabled}
-        >
-          Submit
-        </Button>
+        {submited ? (
+          <Button
+            variant="primary"
+            type={"submit"}
+            onClick={handleSubmit}
+            disabled={isDisabled}
+          >
+            Submit
+          </Button>
+        ) : null}
       </Modal.Footer>
     </Modal>
   );

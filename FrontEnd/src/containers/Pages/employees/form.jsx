@@ -22,6 +22,7 @@ export default function FormDepartament(props) {
     <Modal
       {...props}
       isDisabled={isDisabled}
+      submited
       component={
         <Grid fluid>
           <Row>

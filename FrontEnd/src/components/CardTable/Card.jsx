@@ -15,7 +15,7 @@ const CardTable = props => {
           </Col>
           <Col md={2}>
             <TableButton>
-              <Button onClick={props.handleShow}>Adicionar</Button>
+              <Button onClick={props.handleShow}>Cadastrar</Button>
             </TableButton>
           </Col>
         </Row>

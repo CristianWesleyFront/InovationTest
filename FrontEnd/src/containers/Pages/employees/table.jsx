@@ -22,6 +22,9 @@ export default function TableSearch(props) {
       text: "Departamento",
       headerStyle: () => {
         return { width: "90%" };
+      },
+      formatter: (cell, row) => {
+        return cell.length === 1 ? cell[0] : cell.join(", ");
       }
     }
   ];
