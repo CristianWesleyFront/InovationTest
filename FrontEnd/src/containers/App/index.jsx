@@ -97,7 +97,13 @@ export default function App(props) {
       />
       <div id="main-panel" className="main-panel" ref={mainPanel}>
         <TopBar {...props} brandText={getBrandText(location.pathname)} />
-        <div className="content" style={{ height: window.innerHeight - 123 }}>
+        <div
+          className="content"
+          style={{
+            height: window.innerHeight - 123,
+            width: window.innerWidth - 260
+          }}
+        >
           <Switch>{getRoutes(routes)}</Switch>
         </div>
 

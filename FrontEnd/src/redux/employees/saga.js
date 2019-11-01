@@ -19,7 +19,7 @@ function* searchEmployees() {
 function* submitEmployees(action) {
   console.log(action);
   try {
-    let response = yield call(axios.get, `${action.payload}`);
+    let response = yield call(axios.post, `${action.payload}`);
     yield put(submitEmployeesSuccess(response));
   } catch (error) {
     yield put(submitEmployeesError(error));

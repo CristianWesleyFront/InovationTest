@@ -34,7 +34,7 @@ function Departament(props) {
   let isDisabled = createValue === "" ? true : false;
   return (
     <div className="content">
-      <Grid>
+      <Grid fluid>
         <Row>
           <Col md={12}>
             <Card

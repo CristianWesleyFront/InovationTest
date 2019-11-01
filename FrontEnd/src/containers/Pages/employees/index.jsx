@@ -45,7 +45,7 @@ function Employees(props) {
       : false;
   return (
     <div className="content">
-      <Grid>
+      <Grid fluid>
         <Row>
           <Col md={12}>
             <Card

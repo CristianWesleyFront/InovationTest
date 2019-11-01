@@ -19,7 +19,7 @@ function* searchDepartament() {
 function* submitDepartament(action) {
   console.log(action);
   try {
-    let response = yield call(axios.get, `${action.payload}`);
+    let response = yield call(axios.post, `${action.payload}`);
     yield put(submitDepartamentSuccess(response));
   } catch (error) {
     yield put(submitDepartamentError(error));
