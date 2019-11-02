@@ -4,23 +4,29 @@ import {
   searchDepartamentError,
   searchDepartamentSuccess,
   submitDepartamentSuccess,
-  submitDepartamentError
+  submitDepartamentError,
+  searchDepartamentRequest
 } from "./action";
+import { Api } from "../../settings/consts";
 
 function* searchDepartament() {
   try {
-    let response = yield call(axios.get, `${""}`);
-    yield put(searchDepartamentSuccess(response));
+    let response = yield call(axios.get, `${Api.BASE_URL}departamento`);
+    yield put(searchDepartamentSuccess(response.data));
   } catch (error) {
     yield put(searchDepartamentError(error));
   }
 }
 
 function* submitDepartament(action) {
-  console.log(action);
   try {
-    let response = yield call(axios.post, `${action.payload}`);
-    yield put(submitDepartamentSuccess(response));
+    let response = yield call(
+      axios.post,
+      `${Api.BASE_URL}departamento`,
+      action.payload
+    );
+    yield put(searchDepartamentRequest());
+    yield put(submitDepartamentSuccess(response.data));
   } catch (error) {
     yield put(submitDepartamentError(error));
   }

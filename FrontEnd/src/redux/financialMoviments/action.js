@@ -1,7 +1,20 @@
 export const submitMovimentsRequest = moviments => {
+  const {
+    employeeValue,
+    descriptionValue,
+    movimentValue,
+    departamentSelect
+  } = moviments;
   return {
     type: "@moviments/SUBMIT_REQUEST",
-    payload: moviments
+    payload: {
+      descricao: descriptionValue,
+      funcionario: {
+        nome: employeeValue.value,
+        departamento: departamentSelect.value
+      },
+      valor: `R$ ${parseFloat(movimentValue, 10).toFixed(2)}`
+    }
   };
 };
 export const submitMovimentsSuccess = data => {

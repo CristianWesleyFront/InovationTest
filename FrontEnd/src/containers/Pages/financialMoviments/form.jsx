@@ -52,7 +52,7 @@ export default function FormDepartament(props) {
         }))
       : [];
   };
-  console.log(departaments);
+
   return (
     <Modal
       {...props}

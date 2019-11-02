@@ -9,11 +9,14 @@ import {
   searchMovimentsRequest,
   submitMovimentsRequest
 } from "../../../redux/financialMoviments/action";
-
+import { searchEmployeesRequest } from "../../../redux/employees/action";
+import { searchDepartamentRequest } from "../../../redux/departament/action";
 function Moviments(props) {
   const {
     searchMovimentsRequest,
     submitMovimentsRequest,
+    searchEmployeesRequest,
+    searchDepartamentRequest,
     data,
     employees
   } = props;
@@ -26,22 +29,22 @@ function Moviments(props) {
   const [departaments, setDepartaments] = useState([]);
   const [selectRow, setSelectRow] = useState({});
   useEffect(() => {
+    searchEmployeesRequest();
     searchMovimentsRequest();
   }, []);
   //Form
   const handleSubmit = e => {
-    console.log({
+    submitMovimentsRequest({
       employeeValue,
       descriptionValue,
       movimentValue,
       departamentSelect
     });
-    submitMovimentsRequest();
     setShowForm(false);
   };
   //Moviment
   const handleShowMoviment = row => {
-    setSelectRow(row);
+    setSelectRow(data.filter(e => e._id === row.movimentID)[0]);
     setShowMoment(true);
   };
   const handleCloseMoviment = () => {
@@ -114,7 +117,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { searchMovimentsRequest, submitMovimentsRequest },
+    { searchMovimentsRequest, submitMovimentsRequest, searchEmployeesRequest },
     dispatch
   );
 export default connect(

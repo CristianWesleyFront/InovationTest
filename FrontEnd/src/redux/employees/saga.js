@@ -4,23 +4,29 @@ import {
   searchEmployeesError,
   searchEmployeesSuccess,
   submitEmployeesSuccess,
-  submitEmployeesError
+  submitEmployeesError,
+  searchEmployeesRequest
 } from "./action";
+import { Api } from "../../settings/consts";
 
 function* searchEmployees() {
   try {
-    let response = yield call(axios.get, `${""}`);
-    yield put(searchEmployeesSuccess(response));
+    let response = yield call(axios.get, `${Api.BASE_URL}funcionario`);
+    yield put(searchEmployeesSuccess(response.data));
   } catch (error) {
     yield put(searchEmployeesError(error));
   }
 }
 
 function* submitEmployees(action) {
-  console.log(action);
   try {
-    let response = yield call(axios.post, `${action.payload}`);
-    yield put(submitEmployeesSuccess(response));
+    let response = yield call(
+      axios.post,
+      `${Api.BASE_URL}funcionario`,
+      action.payload
+    );
+    yield put(searchEmployeesRequest());
+    yield put(submitEmployeesSuccess(response.data));
   } catch (error) {
     yield put(submitEmployeesError(error));
   }

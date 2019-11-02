@@ -3,7 +3,6 @@ import INITIAL_STATE from "./store";
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "@departament/SUBMIT_SUCCESS":
-      console.log(action.payload);
       return {
         ...state
       };

@@ -53,7 +53,7 @@ function Departament(props) {
                     onChangeSubmit={onChangeSubmit}
                     isDisabled={isDisabled}
                   />
-                  <Table products={data} />
+                  <Table data={data} />
                 </div>
               }
             />

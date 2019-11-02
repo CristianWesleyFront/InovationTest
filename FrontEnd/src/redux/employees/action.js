@@ -1,13 +1,22 @@
 export const submitEmployeesRequest = employees => {
   return {
     type: "@employees/SUBMIT_REQUEST",
-    payload: employees
+    payload: {
+      nome: employees.inputValue,
+      departamento:
+        employees.selectValue.length === 0
+          ? employees.selectValue[0].value
+          : employees.selectValue.map(e => e.value).join(", ")
+    }
   };
 };
 export const submitEmployeesSuccess = data => {
   return {
     type: "@employees/SUBMIT_SUCCESS",
-    payload: data
+    payload: {
+      nome: data.inputValue,
+      departamento: data.selectValue
+    }
   };
 };
 export const submitEmployeesError = error => {

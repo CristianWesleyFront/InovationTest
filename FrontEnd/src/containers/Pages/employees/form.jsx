@@ -14,8 +14,8 @@ export default function FormDepartament(props) {
   } = props;
   const makeSelectionOptions = departaments => {
     return departaments.map(e => ({
-      value: e.departamento,
-      label: e.departamento
+      value: e.nome,
+      label: e.nome
     }));
   };
   return (

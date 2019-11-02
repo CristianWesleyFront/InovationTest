@@ -25,7 +25,14 @@ export default function TableSearch(props) {
       dataField: "movimentID",
       text: "Id da movimentação",
       headerStyle: () => {
-        return { width: "50%" };
+        return { width: "30%" };
+      }
+    },
+    {
+      dataField: "date",
+      text: "Data de criação",
+      headerStyle: () => {
+        return { width: "20%" };
       }
     },
     {
@@ -43,6 +50,15 @@ export default function TableSearch(props) {
       }
     }
   ];
+
+  const makeDataMovimentacao = data => {
+    return data.map((e, i) => ({
+      id: i,
+      departamento: e.funcionario.departamento,
+      movimentID: e._id,
+      date: new Date(e.data).toLocaleDateString("pt-BR")
+    }));
+  };
   return (
     <>
       <ViewMoviment
@@ -51,7 +67,7 @@ export default function TableSearch(props) {
         data={select}
       />
       <Table
-        products={props.products}
+        products={makeDataMovimentacao(props.products)}
         columns={columns}
         placeholder={"Pesquisa"}
       />

@@ -18,9 +18,15 @@ export default function TableSearch(props) {
       }
     }
   ];
+  const makeData = data => {
+    return data.map((e, i) => ({
+      id: i,
+      departamento: e.nome
+    }));
+  };
   return (
     <Table
-      products={props.products}
+      products={makeData(props.data)}
       columns={columns}
       placeholder={"Pesquisa"}
     />

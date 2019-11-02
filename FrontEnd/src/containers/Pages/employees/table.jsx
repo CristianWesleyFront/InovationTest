@@ -24,7 +24,7 @@ export default function TableSearch(props) {
         return { width: "90%" };
       },
       formatter: (cell, row) => {
-        return cell.length === 1 ? cell[0] : cell.join(", ");
+        return cell.length === 1 ? cell[0] : cell.map(e => e).join(", ");
       }
     }
   ];

@@ -1,7 +1,9 @@
 export const submitDepartamentRequest = departament => {
   return {
     type: "@departament/SUBMIT_REQUEST",
-    payload: departament
+    payload: {
+      nome: departament
+    }
   };
 };
 export const submitDepartamentSuccess = data => {

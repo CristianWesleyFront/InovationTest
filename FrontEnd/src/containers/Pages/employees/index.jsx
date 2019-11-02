@@ -9,11 +9,13 @@ import {
   searchEmployeesRequest,
   submitEmployeesRequest
 } from "../../../redux/employees/action";
+import { searchDepartamentRequest } from "../../../redux/departament/action";
 
 function Employees(props) {
   const {
     searchEmployeesRequest,
     submitEmployeesRequest,
+    searchDepartamentRequest,
     data,
     departaments
   } = props;
@@ -21,6 +23,7 @@ function Employees(props) {
   const [inputValue, setInputValue] = useState("");
   const [selectValue, setSelectValue] = useState([]);
   useEffect(() => {
+    searchDepartamentRequest();
     searchEmployeesRequest();
   }, []);
   const handleShow = () => {
@@ -83,7 +86,11 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { searchEmployeesRequest, submitEmployeesRequest },
+    {
+      searchEmployeesRequest,
+      submitEmployeesRequest,
+      searchDepartamentRequest
+    },
     dispatch
   );
 export default connect(
