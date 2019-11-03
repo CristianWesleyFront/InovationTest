@@ -10,7 +10,8 @@ export default function FormDepartament(props) {
     onChangeInput,
     departaments,
     onChangeSelect,
-    isDisabled
+    isDisabled,
+    inputValue
   } = props;
   const makeSelectionOptions = departaments => {
     return departaments.map(e => ({
@@ -18,6 +19,7 @@ export default function FormDepartament(props) {
       label: e.nome
     }));
   };
+
   return (
     <Modal
       {...props}
@@ -37,7 +39,14 @@ export default function FormDepartament(props) {
                     placeholder: "Nome do funcionario",
                     defaultValue: "",
                     maxLength: 200,
-                    onChange: onChangeInput
+                    onChange: onChangeInput,
+
+                    onInput: e => {
+                      e.target.value =
+                        e.target.value !== ""
+                          ? e.target.value.replace(/[^a-zA-Z]+/g, "")
+                          : "";
+                    }
                   }
                 ]}
               />

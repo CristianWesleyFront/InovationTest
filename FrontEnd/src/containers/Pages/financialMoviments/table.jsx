@@ -18,14 +18,14 @@ export default function TableSearch(props) {
       dataField: "departamento",
       text: "Departamento",
       headerStyle: () => {
-        return { width: "30%" };
+        return { width: "20%" };
       }
     },
     {
       dataField: "movimentID",
       text: "Id da movimentação",
       headerStyle: () => {
-        return { width: "30%" };
+        return { width: "25%" };
       }
     },
     {
@@ -33,6 +33,16 @@ export default function TableSearch(props) {
       text: "Data de criação",
       headerStyle: () => {
         return { width: "20%" };
+      }
+    },
+    {
+      dataField: "valor",
+      text: "Valor",
+      headerStyle: () => {
+        return { width: "15%" };
+      },
+      formatter: (cell, row) => {
+        return "R$ " + cell;
       }
     },
     {
@@ -56,7 +66,8 @@ export default function TableSearch(props) {
       id: i,
       departamento: e.funcionario.departamento,
       movimentID: e._id,
-      date: new Date(e.data).toLocaleDateString("pt-BR")
+      date: new Date(e.data).toLocaleDateString("pt-BR"),
+      valor: e.valor
     }));
   };
   return (

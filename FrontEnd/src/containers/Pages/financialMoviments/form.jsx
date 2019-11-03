@@ -18,7 +18,6 @@ export default function FormDepartament(props) {
     employees,
     setDepartaments
   } = props;
-
   const handleCloseForm = () => {
     setEmployeeValue("");
     setDepartaments([]);
@@ -122,7 +121,11 @@ export default function FormDepartament(props) {
                     placeholder: "R$ Valor da movimentação",
                     defaultValue: "",
                     maxLength: 15,
-                    onChange: onChangeMoviment
+                    onChange: onChangeMoviment,
+                    onInput: e => {
+                      e.target.value =
+                        e.target.value !== "" ? Math.abs(e.target.value) : "";
+                    }
                   }
                 ]}
               />

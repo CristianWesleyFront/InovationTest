@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Itens from "../topBar/itens";
+import Itens from "../navBar/itens";
 
 export default function SideBar(props) {
   const [width, setWidth] = useState(window.innerWidth);
-  const { image, hasImage, location, color, routes } = props;
-  const sidebarBackground = {
-    backgroundImage: "url(" + image + ")"
-  };
+  const { hasImage, location, color, routes } = props;
 
   const activeRoute = routeName => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -21,16 +18,14 @@ export default function SideBar(props) {
   }, []);
 
   return (
-    <div id="sidebar" className="sidebar" data-color={color} data-image={image}>
+    <div id="sidebar" className="sidebar" data-color={color}>
       {hasImage ? (
-        <div className="sidebar-background" style={sidebarBackground} />
+        <div
+          className="sidebar-background"
+          style={{ backgroundColor: "black" }}
+        />
       ) : null}
       <div className="logo" style={{ textAlign: "center" }}>
-        {/* <a className="simple-text logo-mini">
-          <div className="logo-img">
-            <img src={logo} alt="logo_image" />
-          </div>
-        </a> */}
         <a className="simple-text logo-normal">Teste Inovação</a>
       </div>
       <div className="sidebar-wrapper">

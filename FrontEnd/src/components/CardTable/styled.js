@@ -11,3 +11,16 @@ export const TableSerch = styled.div`
     width: 40%;
   }
 `;
+
+export const IconTable = styled.div`
+  i {
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .btn {
+    padding: 8px 8px;
+  }
+`;

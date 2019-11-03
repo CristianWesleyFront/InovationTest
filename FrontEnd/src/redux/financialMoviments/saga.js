@@ -1,5 +1,6 @@
 import { call, put, all, takeLatest } from "redux-saga/effects";
 import axios from "axios";
+import { toast } from "react-toastify";
 import {
   searchMovimentsError,
   searchMovimentsSuccess,
@@ -25,6 +26,9 @@ function* submitMoviments(action) {
       `${Api.BASE_URL}movimentacao`,
       action.payload
     );
+    if (response.status === 201) {
+      toast.success("Cadastro realizado com sucesso");
+    }
     yield put(searchMovimentsRequest());
     yield put(submitMovimentsSuccess(response));
   } catch (error) {

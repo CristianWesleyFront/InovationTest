@@ -1,5 +1,6 @@
 import { call, put, all, takeLatest } from "redux-saga/effects";
 import axios from "axios";
+import { toast } from "react-toastify";
 import {
   searchEmployeesError,
   searchEmployeesSuccess,
@@ -25,6 +26,9 @@ function* submitEmployees(action) {
       `${Api.BASE_URL}funcionario`,
       action.payload
     );
+    if (response.status === 201) {
+      toast.success("Cadastro realizado com sucesso");
+    }
     yield put(searchEmployeesRequest());
     yield put(submitEmployeesSuccess(response.data));
   } catch (error) {

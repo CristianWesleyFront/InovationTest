@@ -13,7 +13,7 @@ export const submitMovimentsRequest = moviments => {
         nome: employeeValue.value,
         departamento: departamentSelect.value
       },
-      valor: `R$ ${parseFloat(movimentValue, 10).toFixed(2)}`
+      valor: `${parseFloat(movimentValue, 10).toFixed(2)}`
     }
   };
 };

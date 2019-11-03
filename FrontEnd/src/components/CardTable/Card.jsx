@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Row, Col, Button } from "react-bootstrap";
-import { TableButton } from "./styled";
+import { TableButton, IconTable } from "./styled";
 
 const CardTable = props => {
   return (
@@ -15,7 +15,14 @@ const CardTable = props => {
           </Col>
           <Col md={2}>
             <TableButton>
-              <Button onClick={props.handleShow}>Cadastrar</Button>
+              <IconTable>
+                <Button onClick={props.handleShow}>
+                  <span>Cadastrar</span>
+                  {props.icon ? (
+                    <i className={`pe-7s-${props.icon}`}></i>
+                  ) : null}
+                </Button>
+              </IconTable>
             </TableButton>
           </Col>
         </Row>

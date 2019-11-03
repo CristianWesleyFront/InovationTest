@@ -35,6 +35,7 @@ function Employees(props) {
   const onChangeInput = e => {
     setInputValue(e.target.value);
   };
+
   const onChangeSelect = e => {
     setSelectValue(e);
   };

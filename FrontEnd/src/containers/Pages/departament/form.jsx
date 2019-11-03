@@ -25,7 +25,13 @@ export default function FormDepartament(props) {
                     placeholder: "nome do departamento",
                     defaultValue: "",
                     maxLength: 100,
-                    onChange: onChangeSubmit
+                    onChange: onChangeSubmit,
+                    onInput: e => {
+                      e.target.value =
+                        e.target.value !== ""
+                          ? e.target.value.replace(/[^a-zA-Z]+/g, "")
+                          : "";
+                    }
                   }
                 ]}
               />

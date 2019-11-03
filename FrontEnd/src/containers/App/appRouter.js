@@ -7,28 +7,28 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: "pe-7s-graph",
+    icon: "pe-7s-home",
     component: Dashboard,
     layout: "/admin"
   },
   {
     path: "/departament",
     name: "Departamento",
-    icon: "pe-7s-user",
+    icon: "pe-7s-note2",
     component: Departament,
     layout: "/admin"
   },
   {
     path: "/employees",
     name: "Funcionários",
-    icon: "pe-7s-note2",
+    icon: "pe-7s-id",
     component: Employees,
     layout: "/admin"
   },
   {
     path: "/financialMoviments",
     name: "Movimentações",
-    icon: "pe-7s-news-paper",
+    icon: "pe-7s-piggy",
     component: FinancialMoviments,
     layout: "/admin"
   }

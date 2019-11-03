@@ -15,30 +15,29 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
+import React from "react";
 import { FormGroup, ControlLabel, FormControl, Row } from "react-bootstrap";
 
 function FieldGroup({ label, ...props }) {
   return (
     <FormGroup>
       <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
+      <FormControl {...props} min={0} />
     </FormGroup>
   );
 }
 
-export class FormInputs extends Component {
-  render() {
-    var row = [];
-    for (var i = 0; i < this.props.ncols.length; i++) {
-      row.push(
-        <div key={i} className={this.props.ncols[i]}>
-          <FieldGroup {...this.props.properties[i]} />
-        </div>
-      );
-    }
-    return <Row>{row}</Row>;
+export function FormInputs(props) {
+  const { ncols, properties } = props;
+  let row = [];
+  for (let i = 0; i < ncols.length; i++) {
+    row.push(
+      <div key={i} className={ncols[i]}>
+        <FieldGroup {...properties[i]} />
+      </div>
+    );
   }
+  return <Row>{row}</Row>;
 }
 
 export default FormInputs;
