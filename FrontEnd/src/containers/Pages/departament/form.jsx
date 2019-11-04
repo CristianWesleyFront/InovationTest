@@ -28,8 +28,8 @@ export default function FormDepartament(props) {
                     onChange: onChangeSubmit,
                     onInput: e => {
                       e.target.value =
-                        e.target.value !== ""
-                          ? e.target.value.replace(/[^a-zA-Z]+/g, "")
+                        e.target.value !== " "
+                          ? e.target.value.replace(/[^a-zA-Z\s]+/g, "")
                           : "";
                     }
                   }

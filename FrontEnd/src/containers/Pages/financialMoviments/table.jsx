@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Table from "components/TableSearch";
 import { IconTable } from "./styled";
 import ViewMoviment from "./viewMoviment";
@@ -17,13 +17,25 @@ export default function TableSearch(props) {
     {
       dataField: "departamento",
       text: "Departamento",
+      style: {
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden"
+      },
       headerStyle: () => {
-        return { width: "20%" };
+        return {
+          width: "20%"
+        };
       }
     },
     {
       dataField: "movimentID",
       text: "Id da movimentação",
+      style: {
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden"
+      },
       headerStyle: () => {
         return { width: "25%" };
       }
@@ -38,6 +50,11 @@ export default function TableSearch(props) {
     {
       dataField: "valor",
       text: "Valor",
+      style: {
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden"
+      },
       headerStyle: () => {
         return { width: "15%" };
       },

@@ -16,7 +16,7 @@ function Departament(props) {
   const [createValue, setCreateValue] = useState("");
   useEffect(() => {
     searchDepartamentRequest();
-  }, []);
+  });
   const handleShow = () => {
     setShowModal(true);
   };

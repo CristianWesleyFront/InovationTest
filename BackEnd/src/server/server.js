@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const allowCors = require("./cors");
 const queryParser = require("express-query-int");
 

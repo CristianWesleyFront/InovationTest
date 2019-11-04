@@ -13,6 +13,11 @@ export default function TableSearch(props) {
     {
       dataField: "funcionario",
       text: "Funcionário",
+      style: {
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden"
+      },
       headerStyle: () => {
         return { width: "90%" };
       }
@@ -20,6 +25,11 @@ export default function TableSearch(props) {
     {
       dataField: "departamento",
       text: "Departamento",
+      style: {
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden"
+      },
       headerStyle: () => {
         return { width: "90%" };
       },

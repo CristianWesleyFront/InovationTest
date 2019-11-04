@@ -2,21 +2,17 @@ const express = require("express");
 //const auth = require('./auth')
 
 module.exports = function(server) {
-  //URL BASICA
   const router = express.Router();
   server.use("/api", router);
 
-  // Rotas de funcionario
-  const funcionando = require("./app/controllers/funcionarioService");
-  funcionando.register(router, "/funcionario");
+  const employee = require("./app/controllers/employeeService");
+  employee.register(router, "/funcionario");
 
-  //Rota de movimentacao
-  const movimentacao = require("./app/controllers/movimentacaoService");
-  movimentacao.register(router, "/movimentacao");
+  const movement = require("./app/controllers/movementService");
+  movement.register(router, "/movimentacao");
 
-  //Rota de departamento
-  const departamento = require("./app/controllers/departamentoService");
-  departamento.register(router, "/departamento");
+  const department = require("./app/controllers/departmentService");
+  department.register(router, "/departamento");
 };
 
 // /*

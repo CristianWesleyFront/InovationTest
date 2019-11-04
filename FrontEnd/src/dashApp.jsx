@@ -3,7 +3,6 @@ import Routes from "./routes";
 import "./settings/ReactotronConfig";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import Boot from "./redux/boot";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -21,8 +20,5 @@ function DashApp() {
     </Provider>
   );
 }
-Boot()
-  .then(() => DashApp())
-  .catch(error => console.error(error));
 
 export default DashApp;

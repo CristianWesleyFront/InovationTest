@@ -23,9 +23,7 @@ export default function TopBar(props) {
   return (
     <Navbar fluid>
       <Navbar.Header>
-        <Navbar.Brand>
-          <a href="#pablo">{brandText}</a>
-        </Navbar.Brand>
+        <Navbar.Brand>{brandText}</Navbar.Brand>
         <Navbar.Toggle onClick={mobileSidebarToggle} />
       </Navbar.Header>
       <Navbar.Collapse>

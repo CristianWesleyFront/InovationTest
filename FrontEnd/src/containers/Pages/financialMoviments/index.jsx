@@ -10,13 +10,11 @@ import {
   submitMovimentsRequest
 } from "../../../redux/financialMoviments/action";
 import { searchEmployeesRequest } from "../../../redux/employees/action";
-import { searchDepartamentRequest } from "../../../redux/departament/action";
 function Moviments(props) {
   const {
     searchMovimentsRequest,
     submitMovimentsRequest,
     searchEmployeesRequest,
-    searchDepartamentRequest,
     data,
     employees
   } = props;
@@ -40,6 +38,11 @@ function Moviments(props) {
       movimentValue,
       departamentSelect
     });
+    setEmployeeValue("");
+    setDescriptionValue("");
+    setMovimentValue("");
+    setDepartamentSelect("");
+    setDepartaments([]);
     setShowForm(false);
   };
   //Moviment

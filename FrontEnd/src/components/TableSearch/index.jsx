@@ -15,7 +15,17 @@ export default function Table(props) {
           </TableSerch>
 
           <hr />
-          <BootstrapTable {...props.baseProps} striped hover bordered={false} />
+          <BootstrapTable
+            {...props.baseProps}
+            striped
+            hover
+            bordered={false}
+            rowStyle={{
+              textOverflow: "ellipsis",
+              overFlow: "hidden",
+              whiteSpace: "nowrap"
+            }}
+          />
         </div>
       )}
     </ToolkitProvider>

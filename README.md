@@ -2,4 +2,16 @@
 
 Teste da inovação
 
-Templete : https://github.com/creativetimofficial/light-bootstrap-dashboard-react.git
+Template : https://github.com/creativetimofficial/light-bootstrap-dashboard-react.git
+
+Tecnologias:
+bootstrap
+react
+redux
+redux-saga
+react-router
+styled-components
+express
+mongoose
+node-restful
+lodash
