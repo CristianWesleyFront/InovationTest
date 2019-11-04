@@ -30,7 +30,7 @@ export function* Logout() {
   clearToken();
 }
 export function* LoginSuccess(action) {
-  yield localStorage.setItem("id_token", action.payload.token);
+  yield localStorage.setItem("id_token", action.payload);
 }
 export function* LoginError() {}
 

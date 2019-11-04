@@ -1,7 +1,17 @@
 import React from "react";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { bindActionCreators } from "redux";
 import { NavItem, Nav } from "react-bootstrap";
+import { logout } from "../../redux/auth/action";
 
-export default function Itens(props) {
+function Itens(props) {
+  const { logout } = props;
+  let history = useHistory();
+  const onClickFunction = () => {
+    logout();
+    history.push("/");
+  };
   return (
     <div>
       <Nav pullRight>
@@ -21,10 +31,16 @@ export default function Itens(props) {
           <MenuItem divider />
           <MenuItem eventKey={2.5}>Separated link</MenuItem>
         </NavDropdown> */}
-        <NavItem eventKey={3} href="#">
+        <NavItem eventKey={3} href="#" onClick={() => onClickFunction()}>
           Log out
         </NavItem>
       </Nav>
     </div>
   );
 }
+const mapStateToProps = state => ({});
+const mapDispatchToProps = dispatch => bindActionCreators({ logout }, dispatch);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Itens);

@@ -103,10 +103,7 @@ export default function App(props) {
             width: window.innerWidth - 260
           }}
         >
-          <Switch>
-            {/* <Redirect from="" to="/admin/dashboard" /> */}
-            {getRoutes(routes)}
-          </Switch>
+          <Switch>{getRoutes(routes)}</Switch>
         </div>
 
         <Footer />
